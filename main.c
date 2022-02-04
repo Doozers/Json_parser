@@ -6,6 +6,7 @@
 */
 
 #include "include/json_parser.h"
+#include <string.h>
 
 void my_show_list(obj_t *node)
 {
@@ -19,12 +20,21 @@ int main(int ac, char const **av)
 {
     int f = open("exemple.json", O_RDONLY);
     struct stat stat1;
+
     stat("exemple.json", &stat1);
-
     char buffer[stat1.st_size];
-
     read(f, buffer, stat1.st_size);
     buffer[stat1.st_size] = '\0';
     obj_t *head = parsing_object(buffer);
-    parse_each_nodes(&head);
+
+    obj_t *pointer = NULL;
+    while (strcmp(head->key, "q3") != 0) head = head->next;
+    head = head->data->value->value_obj;
+    while (strcmp(head->key, "options") != 0) head = head->next;
+    head = head->data->value->value_obj;
+    while (strcmp(head->key, "2") != 0) head = head->next;
+
+    printf("STR IS ==%s \n", head->data->value->value_str);
+
+    return 0;
 }

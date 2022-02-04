@@ -21,12 +21,15 @@ void case_obj(char *str, int *i, obj_t **node)
     } while (profondeur != 0);
 }
 
-void case_value(char *str, int *i, obj_t **node)
+void case_value(char *str, int *i, obj_t **node, int is_tab)
 {
-    *i += 2;
+    if (is_tab == 1)
+        *i += 2;
     do {
         (*node)->value_str = my_strcatchar((*node)->value_str, str[*i]);
         *i += 1;
+        if (is_tab == 0 && str[*i] == ']')
+            break;
     } while (str[*i] && str[*i] != ',' && str[*i] != '}');
     //my_putstr((*node)->value_str);
 }

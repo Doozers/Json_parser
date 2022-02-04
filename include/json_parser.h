@@ -40,7 +40,7 @@ void my_show_list(obj_t *node);
 
 //parsing_funcs.h
 obj_t *parsing_object(char *buffer);
-char **parsing_array(char *str);
+obj_t *parsing_array(char *str);
 void parse_each_nodes(obj_t **head);
 
 //formating_funcs.h
@@ -51,7 +51,7 @@ int count_tab(char *str);
 
 //diff_case_parsing.h
 void case_obj(char *str, int *i, obj_t **node);
-void case_value(char *str, int *i, obj_t **node);
+void case_value(char *str, int *i, obj_t **node, int is_tab);
 void case_tab(char *str, int *i, obj_t **node);
 
 #endif /* include */
