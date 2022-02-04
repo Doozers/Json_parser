@@ -10,11 +10,11 @@
 obj_t *parsing_object(char *buffer)
 {
     obj_t *head = malloc(sizeof(obj_t));
+    head->next = NULL;
     head->data = malloc(sizeof(data_t));
     head->data->value = malloc(sizeof(value_t));
     obj_t *node = head;
     char *str = formating_buffer(buffer);
-    printf("%s\n", str);
     for (int i = 1; str[i] != '}'; i++) {
         node->key = "\0";
         node->value_str = "\0";
@@ -30,20 +30,17 @@ obj_t *parsing_object(char *buffer)
         } else if (str[i + 2] == '[') { // case tab TODO: coding style
             case_tab(str, &i, &node);
         } else {
-            my_show_list(head);
-            printf("\n%c is %c && i = %i\n", str[i + 2], str[i + 3], i);
             exit(84);
         }
         if (str[i] == '}')
             break;
         obj_t *new_node = malloc(sizeof(obj_t));
+        new_node->next = NULL;
         new_node->data = malloc(sizeof(data_t));
         new_node->data->value = malloc(sizeof(value_t));
         node->next = new_node;
         node = node->next;
     }
-    my_show_list(head);
-    printf("\n\n");
     parse_each_nodes(&head);
     return head;
 }
@@ -51,12 +48,12 @@ obj_t *parsing_object(char *buffer)
 obj_t *parsing_array(char *buffer)
 {
     obj_t *head = malloc(sizeof(obj_t));
+    head->next = NULL;
     head->data = malloc(sizeof(data_t));
     head->data->value = malloc(sizeof(value_t));
     obj_t *node = head;
     char *str = formating_buffer(buffer);
     int index = 0;
-    printf("%s\n", str);
     for (int i = 1; str[i] != ']'; i++) {
         node->value_str = "\0";
         node->key = my_itoa(index);
@@ -68,20 +65,17 @@ obj_t *parsing_array(char *buffer)
         } else if (str[i] == '[') { // case tab TODO: coding style
             case_tab(str, &i, &node);
         } else {
-            my_show_list(head);
-            printf("\n%c is %c && i = %i\n", str[i], str[i + 1], i);
             exit(84);
         }
         if (str[i] && (str[i] == ']'))
             break;
         obj_t *new_node = malloc(sizeof(obj_t));
+        new_node->next = NULL;
         new_node->data = malloc(sizeof(data_t));
         new_node->data->value = malloc(sizeof(value_t));
         node->next = new_node;
         node = node->next;
     }
-    my_show_list(head);
-    printf("\n\n");
     parse_each_nodes(&head);
     return head;
 }
@@ -110,5 +104,4 @@ void parse_each_nodes(obj_t **head)
             node->data->value->value_int = my_getnbr(node->value_str);
         node = node->next;
     }
-    //my_show_list(*head);
 }

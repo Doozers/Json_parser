@@ -54,4 +54,7 @@ void case_obj(char *str, int *i, obj_t **node);
 void case_value(char *str, int *i, obj_t **node, int is_tab);
 void case_tab(char *str, int *i, obj_t **node);
 
+//access_node.h
+obj_t *acces_node(obj_t **coming, char *str);
+
 #endif /* include */

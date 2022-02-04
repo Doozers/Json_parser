@@ -31,7 +31,6 @@ void case_value(char *str, int *i, obj_t **node, int is_tab)
         if (is_tab == 0 && str[*i] == ']')
             break;
     } while (str[*i] && str[*i] != ',' && str[*i] != '}');
-    //my_putstr((*node)->value_str);
 }
 
 void case_tab(char *str, int *i, obj_t **node)
