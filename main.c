@@ -28,8 +28,7 @@ int main(int ac, char const **av)
     obj_t *head = parsing_object(buffer);
 
     obj_t *pointer = NULL;
-
-    printf("STR IS == %s \n", acces_node(&head, "q3/options/3")->data->value->value_str);
+    printf("STR IS == %s \n", acces_node(&head, "q3/question")->data->value->value_str);
 
     return 0;
 }

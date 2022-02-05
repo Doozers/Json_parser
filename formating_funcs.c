@@ -7,17 +7,21 @@
 
 #include "include/json_parser.h"
 
-char *formating_buffer(char *buffer)
+char *formating_buffer(char *buf)
 {
     char *formated = "\0";
-    int deepness = 0;
-    for (int i = 0; buffer[i]; i++) {
-        if (deepness == 0 && buffer[i] == '"')
-            deepness++;
-        else if (deepness == 1 && buffer[i] == '"')
-            deepness--;
-        if (buffer[i] != '\n' && (buffer[i] != '\t' && buffer[i] != ' ' || deepness == 1))
-            formated = my_strcatchar(formated, buffer[i]);
+    int deep = 0;
+    int check = 0;
+    for (int i = 0; buf[i]; i++) {
+        check = 0;
+        if (deep == 0 && buf[i] == '"') {
+            deep++;
+            check = 1;
+        }
+        if (check == 0 && (deep == 1 && buf[i] == '"'))
+            deep--;
+        if (buf[i] != '\n' && (buf[i] != '\t' && buf[i] != ' ' || deep == 1))
+            formated = my_strcatchar(formated, buf[i]);
     }
     return formated;
 }

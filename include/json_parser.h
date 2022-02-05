@@ -57,4 +57,8 @@ void case_tab(char *str, int *i, obj_t **node);
 //access_node.h
 obj_t *acces_node(obj_t **coming, char *str);
 
+//parsing_funcs_annexe.h
+obj_t *parsing_object(char *buffer);
+void annex_parsing_array(obj_t **node, char *str, int *i, int *index);
+
 #endif /* include */
