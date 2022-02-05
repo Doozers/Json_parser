@@ -16,19 +16,23 @@ void my_show_list(obj_t *node)
     }
 }
 
-int main(int ac, char const **av)
+obj_t *json_parser(char *json_to_open)
 {
-    int f = open("exemple.json", O_RDONLY);
+    int f = open(json_to_open, O_RDONLY);
     struct stat stat1;
 
-    stat("exemple.json", &stat1);
+    stat(json_to_open, &stat1);
     char buffer[stat1.st_size];
     read(f, buffer, stat1.st_size);
     buffer[stat1.st_size] = '\0';
     obj_t *head = parsing_object(buffer);
 
-    obj_t *pointer = NULL;
-    printf("STR IS == %s \n", acces_node(&head, "q3/question")->data->value->value_str);
+    printf("voila = %i", acces_node(&head, "tower3/pos/0")->data->value->value_int);
 
-    return 0;
+    return head;
+}
+
+int main(int ac, char **av)
+{
+    obj_t *h = json_parser("exemple.json");
 }

@@ -21,7 +21,7 @@ int count_slash(char *str)
 char **parsing_access(char *str)
 {
     int size_tab = count_slash(str);
-    char **array = malloc(sizeof(char *) * size_tab - 1);
+    char **array = malloc(sizeof(char *) * (size_tab + 1));
     int index_tab = 0;
     array[0] = "\0";
 

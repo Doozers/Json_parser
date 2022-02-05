@@ -1,30 +1,23 @@
 {
-
-        "options": [
-          "New York Bulls",
-          "Los Angeles Kings",
-          "Golden State Warriros",
-          "Huston Rocket"
-        ],
-      "q1": 70,
-      "q3": {
-        "question": "5 + 7 = ?",
-        "options": [
-            10,
-          "11",
-          "ALEX",
-          "13"
-        ],
-        "answer": "12"
-      },
-      "q4": {
-        "question": "12 - 8 = ?",
-        "options": [
-          "1",
-          "2",
-          "3",
-          "4"
-        ],
-        "answer": "4"
-      }
+  "tower1": {
+    "level": 11,
+    "pos": [
+      111,
+      111
+    ]
+  },
+  "tower2": {
+    "level": 22,
+    "pos": [
+      222,
+      222
+    ]
+  },
+  "tower3": {
+    "level": 33,
+    "pos": [
+      333,
+      333
+    ]
+  }
 }

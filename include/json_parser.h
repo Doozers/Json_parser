@@ -19,7 +19,6 @@ typedef union value {
     char *tag;
     int value_int;
     char *value_str;
-    char **value_array;
     struct obj *value_obj;
 } value_t;
 
@@ -36,6 +35,7 @@ typedef struct obj {
 } obj_t;
 
 //main.h
+obj_t *json_parser(char *json_to_open);
 void my_show_list(obj_t *node);
 
 //parsing_funcs.h
@@ -60,5 +60,6 @@ obj_t *acces_node(obj_t **coming, char *str);
 //parsing_funcs_annexe.h
 obj_t *parsing_object(char *buffer);
 void annex_parsing_array(obj_t **node, char *str, int *i, int *index);
+void annexe_parsing_object(obj_t **node, char *str, int *i);
 
 #endif /* include */

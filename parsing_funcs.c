@@ -56,9 +56,9 @@ obj_t *parsing_array(char *buffer)
 
 char *parsing_str(char *buffer)
 {
-    char *str = malloc(sizeof(buffer));
+    char *str = "0";
 
-    for (int i = 1; buffer[i + 1]; i++)
+    for (int i = 1; buffer[i] && buffer[i + 1]; i++)
         str = my_strcatchar(str, buffer[i]);
 
     return str;
