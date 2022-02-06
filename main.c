@@ -6,7 +6,6 @@
 */
 
 #include "include/json_parser.h"
-#include <string.h>
 
 void my_show_list(obj_t *node)
 {
@@ -27,7 +26,7 @@ obj_t *json_parser(char *json_to_open)
     buffer[stat1.st_size] = '\0';
     obj_t *head = parsing_object(buffer);
 
-    printf("voila = %i", acces_node(&head, "tower3/pos/0")->data->value->value_int);
+    //printf("voila = %i\n", acces_node(&head, "tower3/pos/0")->data->value->value_int);
 
     return head;
 }
@@ -35,4 +34,7 @@ obj_t *json_parser(char *json_to_open)
 int main(int ac, char **av)
 {
     obj_t *h = json_parser("exemple.json");
+    obj_t *tmp = acces_node(&h, "tower2/level");
+                                                                                                                                                                                                                                                                                                                       tmp->data->value->value_int = 257;
+    json_writer(h, "output.json");
 }

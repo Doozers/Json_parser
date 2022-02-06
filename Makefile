@@ -5,7 +5,8 @@
 ## Project's main makefile
 ##
 
-SRC		=	$(wildcard *.c)
+SRC		=	$(wildcard *.c) \
+			$(wildcard json_writer/*.c)
 
 OBJ		=	$(SRC:.c=.o)
 

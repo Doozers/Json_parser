@@ -56,7 +56,7 @@ obj_t *parsing_array(char *buffer)
 
 char *parsing_str(char *buffer)
 {
-    char *str = "0";
+    char *str = "\0";
 
     for (int i = 1; buffer[i] && buffer[i + 1]; i++)
         str = my_strcatchar(str, buffer[i]);
@@ -68,14 +68,22 @@ void parse_each_nodes(obj_t **head)
 {
     obj_t *node = *head;
     while (node) {
-        if (node->value_str[0] == '{')
+        if (node->value_str[0] == '{') {
             node->data->value->value_obj = parsing_object(node->value_str);
-        if (node->value_str[0] == '[')
+            node->data->type = 'O';
+        }
+        if (node->value_str[0] == '[') {
             node->data->value->value_obj = parsing_array(node->value_str);
-        if (node->value_str[0] == '"')
+            node->data->type = 'A';
+        }
+        if (node->value_str[0] == '"') {
             node->data->value->value_str = parsing_str(node->value_str);
-        if (my_isdigit(node->value_str[0]) == 0)
+            node->data->type = 'S';
+        }
+        if (my_isdigit(node->value_str[0]) == 0) {
             node->data->value->value_int = my_getnbr(node->value_str);
+            node->data->type = 'I';
+        }
         node = node->next;
     }
 }

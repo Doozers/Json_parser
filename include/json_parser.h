@@ -16,15 +16,14 @@
     #include "sys/stat.h"
 
 typedef union value {
-    char *tag;
     int value_int;
     char *value_str;
     struct obj *value_obj;
 } value_t;
 
 typedef struct data {
+    char type;
     union value *value;
-    struct data *next;
 } data_t;
 
 typedef struct obj {
@@ -61,5 +60,18 @@ obj_t *acces_node(obj_t **coming, char *str);
 obj_t *parsing_object(char *buffer);
 void annex_parsing_array(obj_t **node, char *str, int *i, int *index);
 void annexe_parsing_object(obj_t **node, char *str, int *i);
+
+//json_writer.h
+void json_writer(obj_t *head, char *file);
+
+//printer_cases.h
+void print_objects(obj_t **head, int tab, int fd, int in_tab);
+void print_array(obj_t **head, int tab, int fd, int in_tab);
+void print_str(obj_t **head, int tab, int fd, int in_tab);
+void print_integer(obj_t **head, int tab, int fd, int in_tab);
+
+//utilitary_func.h
+void print_tab(int tab, int fd);
+int switch_case_func(int in_tab, int fd, int tab, obj_t *tmp);
 
 #endif /* include */
