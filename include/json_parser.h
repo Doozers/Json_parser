@@ -5,8 +5,8 @@
 ** pushswap
 */
 
-#ifndef include
-    #define include
+#ifndef json_parser_h
+    #define json_parser_h
 
     #include "my.h"
     #include "stdlib.h"
@@ -14,6 +14,7 @@
     #include "unistd.h"
     #include "fcntl.h"
     #include "sys/stat.h"
+    #include "ismalloc.h"
 
 typedef union value {
     int value_int;
@@ -74,4 +75,4 @@ void print_integer(obj_t **head, int tab, int fd, int in_tab);
 void print_tab(int tab, int fd);
 int switch_case_func(int in_tab, int fd, int tab, obj_t *tmp);
 
-#endif /* include */
+#endif /* json_parser_h */

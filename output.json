@@ -1,0 +1,24 @@
+{
+  "tower1": {
+    "level": 11,
+    "pos": [
+      111,
+      111
+    ]
+  },
+  "tower2": {
+    "level": 257,
+    "alexandru": "coucou",
+    "pos": [
+      222,
+      222
+    ]
+  },
+  "tower3": {
+    "level": 33,
+    "pos": [
+      333,
+      333
+    ]
+  }
+}

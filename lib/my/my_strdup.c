@@ -6,12 +6,13 @@
 */
 
 #include "my.h"
+#include "../../include/ismalloc.h"
 #include <stdlib.h>
 
 char *my_strdup(char const *src)
 {
     int src_length = my_strlen(src);
-    char *copy = malloc((src_length + 1) * sizeof(char));
+    char *copy = ismalloc((src_length + 1) * sizeof(char));
 
     for (int index = 0; *(src + index) != '\0'; index++)
         *(copy + index) = *(src + index);

@@ -5,14 +5,16 @@
 ## Project's main makefile
 ##
 
-SRC		=	$(wildcard *.c) \
-			$(wildcard json_writer/*.c)
+SRC		=	main.c \
+			$(wildcard parser/*.c) \
+			$(wildcard writer/*.c) \
+			$(wildcard ismalloc/*.c)
 
 OBJ		=	$(SRC:.c=.o)
 
 NAME	=	json_parser
 
-CFLAGS 	=	-g3
+CFLAGS 	=	-g3 -Iinclude
 
 LIB		=	-L./lib/my -lmy
 

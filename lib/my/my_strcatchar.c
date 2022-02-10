@@ -5,6 +5,7 @@
 ** my_strcatchar
 */
 
+#include "../../include/ismalloc.h"
 #include <stdlib.h>
 
 char *my_strcpy(char *dest, char const *src);
@@ -15,7 +16,7 @@ char *my_strcatchar(char *dest, char const src)
     int i = my_strlen(dest);
 
     char *returned;
-    returned = malloc(sizeof(char) * (i + 2));
+    returned = ismalloc(sizeof(char) * (i + 2));
     returned = my_strcpy(returned, dest);
     returned[i] = src;
     returned[i + 1] = '\0';
