@@ -22,7 +22,7 @@ obj_t *acces_node(obj_t **coming, char *str); // ex : str = "data/adress_data/Ch
 void json_writer(obj_t *head, char *file);
 ```
 
-> ### To create easly a new node in the func :
+> #### To create easly a new node in the func :
 
 ```C
 obj_t *new_object(obj_t **neck, char *key); /* neck is the key of an object in the linked list where you want to
