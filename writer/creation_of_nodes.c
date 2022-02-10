@@ -7,7 +7,7 @@
 
 #include "../include/json_parser.h"
 
-obj_t *ismaike_tyson(obj_t **neck, char *key)
+obj_t *new_object(obj_t **neck, char *key)
 {
     obj_t *head;
     if (!(*neck)) {
@@ -29,7 +29,7 @@ obj_t *ismaike_tyson(obj_t **neck, char *key)
     return head;
 }
 
-void isma_traque_str(obj_t **base_object, char *key, char *data)
+void add_str(obj_t **base_object, char *key, char *data)
 {
     obj_t *tmp = *base_object;
     if (!tmp->data->value->value_obj) {
@@ -49,7 +49,7 @@ void isma_traque_str(obj_t **base_object, char *key, char *data)
     tmp->data->value->value_str = data;
 }
 
-void isma_traque_int(obj_t **base_object, char *key, int data)
+void add_int(obj_t **base_object, char *key, int data)
 {
     obj_t *tmp = *base_object;
     if (!tmp->data->value->value_obj) {

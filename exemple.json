@@ -1,24 +1,28 @@
 {
-  "tower1": {
-    "level": 11,
-    "pos": [
-      111,
-      111
-    ]
+  "data" : {
+    "adress_data": {
+      "Chicago": {
+        "Mr_A": "1 st Chicago",
+        "Mr_B": "2 st Chicago",
+        "Mr_C": "3 st Chicago"
+      }
+    },
+    "politics_data": {
+      "nb vote 3 last years": {
+        "chicago": [
+          23479766,
+          28638738,
+          3783839
+        ],
+        "LA": [
+          23479766,
+          28638738,
+          3783839
+        ]
+      }
+    }
   },
-  "tower2": {
-    "level": 22,
-    "alexandru": "coucou",
-    "pos": [
-      222,
-      222
-    ]
-  },
-  "tower3": {
-    "level": 33,
-    "pos": [
-      333,
-      333
-    ]
+  "university_data" : {
+    "the university" : "EPITECH"
   }
 }

@@ -5,8 +5,8 @@
 ** pushswap
 */
 
-#ifndef json_parser_h
-    #define json_parser_h
+#ifndef include
+    #define include
 
     #include "my.h"
     #include "stdlib.h"
@@ -75,4 +75,9 @@ void print_integer(obj_t **head, int tab, int fd, int in_tab);
 void print_tab(int tab, int fd);
 int switch_case_func(int in_tab, int fd, int tab, obj_t *tmp);
 
-#endif /* json_parser_h */
+//creation_of_nodes.h
+obj_t *new_object(obj_t **neck, char *key);
+void add_str(obj_t **base_object, char *key, char *data);
+void add_int(obj_t **base_object, char *key, int data);
+
+#endif /* include */
