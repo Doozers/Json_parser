@@ -15,3 +15,9 @@ obj_t *json_parser(char *json_to_open);
 ```C
 obj_t *acces_node(obj_t **coming, char *str); // ex : str = "data/adress_data/Chicago/Mr_X"
 ```
+
+> #### To write a list in a .json file :
+
+```C
+void json_writer(obj_t *head, char *file);
+```
