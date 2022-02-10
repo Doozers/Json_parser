@@ -30,3 +30,37 @@ void json_writer(obj_t *head, char *file);
 obj_t *new_object(obj_t **neck, char *key); /* neck is the key of an object in the linked list where you want to
 add the new object */
 ```
+
+## EXEMPLE :zap:
+
+Here is an exemple of basic usage.
+
+<p align="center">
+    <br/>
+  <image src="./image/screen1.png" />
+  <br/>
+  <br/>
+</p>
+
+```C
+int main(int ac, char **av)
+{
+    obj_t *head = json_parser("exemple.json");
+    obj_t *tmp = acces_node(&head, "data/adress_data/Chicago/Mr_B");
+
+    tmp->data->value->value_str = "EPITECH Lyon 69007";
+    tmp = acces_node(&head, "data/politics_data/nb vote 3 last years");
+    tmp = new_object(&tmp, "GRADE");
+    add_int(&tmp, "GPA", 3);
+    add_str(&tmp, "#_#", "-_-");
+
+    json_writer(head, "output.json");
+}
+```
+
+<p align="center">
+    <br/>
+  <image src="./image/screen2.png" />
+  <br/>
+  <br/>
+</p>
