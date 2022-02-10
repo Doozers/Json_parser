@@ -31,9 +31,5 @@ obj_t *json_parser(char *json_to_open)
 
 int main(int ac, char **av)
 {
-    obj_t *h = json_parser("exemple.json");
-    obj_t *tmp = acces_node(&h, "tower2/level");
-                                                                                                                                                                                                                                                                                                                       tmp->data->value->value_int = 257;
-    printf("voila = %i\n", acces_node(&h, "tower3/pos/0")->data->value->value_int);
-    json_writer(h, "output.json");
+    return 0;
 }

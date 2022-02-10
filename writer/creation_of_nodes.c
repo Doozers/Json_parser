@@ -7,7 +7,7 @@
 
 #include "../include/json_parser.h"
 
-obj_t *ismaike_tyson(obj_t **neck, char *key) // envoie un node de la liste où tu veux rajouter un objet
+obj_t *ismaike_tyson(obj_t **neck, char *key)
 {
     obj_t *head;
     if (!(*neck)) {
