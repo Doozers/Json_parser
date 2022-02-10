@@ -5,7 +5,7 @@ I made it as I can use a proper and common data structure in my Epitech's projec
 
 ## USAGE 
 
-#### > to get the json in a structured linked list:
+#### >To get the json in a structured linked list:
 
 ```C
 obj_t *json_parser(char *json_to_open);
