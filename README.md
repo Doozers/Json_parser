@@ -10,3 +10,8 @@ I made it as I can use a proper and common data structure in my Epitech's projec
 ```C
 obj_t *json_parser(char *json_to_open);
 ```
+> #### To access a node in a list :
+
+```C
+obj_t *acces_node(obj_t **coming, char *str); // ex : str = "data/adress_data/Chicago/Mr_X"
+```
