@@ -50,7 +50,7 @@ char *formating_buffer(char *buffer);
 int count_tab(char *str);
 
 //diff_case_parsing.h
-void case_obj(char *str, int *i, obj_t **node);
+void case_obj(char *str, int *i, obj_t **node, int bool);
 void case_value(char *str, int *i, obj_t **node, int is_tab);
 void case_tab(char *str, int *i, obj_t **node);
 

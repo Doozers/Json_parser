@@ -5,7 +5,7 @@
 ** No file there , just an epitech header example
 */
 
-#include "json_parser.h"
+#include "../include/json_parser.h"
 #include <string.h>
 
 int count_slash(char *str)

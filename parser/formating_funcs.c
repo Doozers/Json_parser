@@ -5,7 +5,7 @@
 ** No file there , just an epitech header example
 */
 
-#include "json_parser.h"
+#include "../include/json_parser.h"
 
 char *formating_buffer(char *buf)
 {

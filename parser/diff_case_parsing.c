@@ -5,12 +5,13 @@
 ** No file there , just an epitech header example
 */
 
-#include "json_parser.h"
+#include "../include/json_parser.h"
 
-void case_obj(char *str, int *i, obj_t **node)
+void case_obj(char *str, int *i, obj_t **node, int bool)
 {
     int profondeur = 0;
-    *i += 2;
+    if (bool)
+        *i += 2;
     do {
         if (str[*i] == '{')
             profondeur++;
